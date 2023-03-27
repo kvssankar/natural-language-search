@@ -1,5 +1,5 @@
 {
-  "name": "natural-language-search",
+  "name": "query-gpt",
   "version": "1.0.0",
   "description": "Search your json data using natural language",
   "main": "dist/index.js",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kvssankar/natural-language-search.git"
+    "url": "git+https://github.com/kvssankar/query-gpt.git"
   },
   "author": "kvssankar",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kvssankar/natural-language-search/issues"
+    "url": "https://github.com/kvssankar/query-gpt/issues"
   },
   "keywords": [
     "natural",
@@ -23,7 +23,7 @@
     "json",
     "data"
   ],
-  "homepage": "https://github.com/kvssankar/natural-language-search#readme",
+  "homepage": "https://github.com/kvssankar/query-gpt#readme",
   "dependencies": {
     "openai": "^3.2.1"
   },

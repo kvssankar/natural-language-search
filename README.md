@@ -1,27 +1,74 @@
-# Natural Language Search
-Search through your json data using natural language
 
-> Note: Only pass JSON Arrays
+# QueryGPT
 
-    const queryGPT = require("natural-language-search");
-    const dummyData = [
-      {
-        color: "red",
-        value: "#f00",
-      },
-      {
-        color: "black",
-        value: "#000",
-        age: "1",
-      },
+A simple npm package to perform natural language search on JSON data using OpenAI's GPT-3 API.
+
+## Installation
+
+You can install the package using npm:
+
+
+
+`npm install query-gpt` 
+
+## Usage
+
+The package exports a function `queryGPT` that takes 3 compulsory parameters and 2 optional parameters:
+
+
+
+`queryGPT(jsonData, queryString, apiKey, maxTokens = 2048, chunks = 100)` 
+
+The parameters are described below:
+
+-   `jsonData`: An array of objects that you want to search. Pass only arrays.
+-   `queryString`: The search query string in natural language.
+-   `apiKey`: Your OpenAI API key.
+-   `maxTokens` (optional): The maximum number of characters to generate for each search result. Defaults to 2048.
+-   `chunks` (optional): The number of elements to send in each API request. The default is 100, but you may need to reduce this value if the size of your data is large.
+
+Here's an example usage:
+
+    const queryGPT = require('query-gpt');
+    //or
+    import queryGPT from 'query-gpt';
+    
+    const jsonData = [
+      { name: 'Alice', age: 25, city: 'New York' },
+      { name: 'Bob', age: 30, city: 'San Francisco' },
+      { name: 'Charlie', age: 35, city: 'Chicago' }
     ];
-     const result = await queryGPT(
-       dummyData,
-       "find the data that has age",
-       "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"
-     );
-     // result = [1]
     
+    const queryString = 'find people who live in New York';
     
-    main();
+    const openApiKey = 'YOUR_API_KEY';
+    
+    queryGPT(jsonData, queryString, openApiKey)
+      .then(results => console.log(results))
+      .catch(error => console.error(error));
+      
+    //full usage
+    queryGPT(jsonData, queryString, openApiKey, 2700, 50)
+      .then(results => console.log(results))
+      .catch(error => console.error(error));
 
+
+> NOTE: 
+> If your getting an empty array as result repeatedly
+> 1. You might have exceeded your max token of 2048, try increasing max tokens and decreasing chunks
+> 2. Please re-verify the Open Apikey that you passed
+
+
+## Limitations
+
+This package is suitable for small JSON data and may not work well for large datasets.
+
+ 
+
+## Contributing
+
+Contributions are welcome! If you find a bug or have a feature request, please open an issue or submit a pull request.
+
+## License
+
+This package is licensed under the MIT License.
