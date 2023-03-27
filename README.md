@@ -26,6 +26,7 @@ The parameters are described below:
 -   `apiKey`: Your OpenAI API key.
 -   `maxTokens` (optional): The maximum number of characters to generate for each search result. Defaults to 2048.
 -   `chunks` (optional): The number of elements to send in each API request. The default is 100, but you may need to reduce this value if the size of your data is large.
+-    `Return Type`: A promise that resolves to an array of indexes that match the search query.
 
 Here's an example usage:
 
@@ -51,6 +52,8 @@ Here's an example usage:
     queryGPT(jsonData, queryString, openApiKey, 2700, 50)
       .then(results => console.log(results))
       .catch(error => console.error(error));
+
+    //result: [0]
 
 
 > NOTE: 
