@@ -1,6 +1,6 @@
 {
   "name": "query-gpt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Search your json data using natural language",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
