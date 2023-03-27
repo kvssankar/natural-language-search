@@ -1,0 +1,33 @@
+{
+  "name": "natural-language-search",
+  "version": "1.0.0",
+  "description": "Search your json data using natural language",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kvssankar/natural-language-search.git"
+  },
+  "author": "kvssankar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kvssankar/natural-language-search/issues"
+  },
+  "keywords": [
+    "natural",
+    "language",
+    "search",
+    "json",
+    "data"
+  ],
+  "homepage": "https://github.com/kvssankar/natural-language-search#readme",
+  "dependencies": {
+    "openai": "^3.2.1"
+  },
+  "devDependencies": {
+    "dts-gen": "^0.6.1"
+  }
+}
